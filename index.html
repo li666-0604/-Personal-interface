@@ -1,18 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>个人名片页</title>
+  <title>个人名片 - 晓黎</title>
   <style>
-    /* 初始化 导入样式初始化.css */
-    @import url(./样式初始化.css);
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: '微软雅黑';
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  outline: none;
+}
 
     body {
       width: 100%;
+      min-height: 100vh;
       background-color: #0f172a;
       padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      max-width: 420px;
+      width: 100%;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border-radius: 24px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .header {
+      text-align: center;
     }
 
     .Avatar {
@@ -22,15 +57,10 @@
       margin-bottom: 20px;
       border: 3px solid #5DADE2;
       box-shadow: 0 0 20px rgba(93, 173, 226, 0.3);
-      margin: 0 auto;
-    }
-
-    .header {
-      text-align: center;
+      object-fit: cover;
     }
 
     .main .name {
-      /* 主体居中 */
       text-align: center;
       font-size: 28px;
       font-weight: 600;
@@ -40,7 +70,6 @@
 
     .main .desc {
       margin-top: 16px;
-      /* 文字居中 */
       text-align: center;
     }
 
@@ -52,16 +81,12 @@
       padding: 6px 14px;
       border-radius: 20px;
       display: inline-block;
-      box-shadow: 1px solid rgba(93, 173, 226, 0.3);
-      margin-right: 12px;
+      box-shadow: 0 0 0 1px rgba(93, 173, 226, 0.3);
+      margin: 4px 6px;
     }
 
     .main .desc2 {
-      /* 主体居中 */
       text-align: center;
-      /* 文字居中 */
-      line-height: 24px;
-      /* 行高 */
       line-height: 1.6;
       font-size: 14px;
       color: #94a3b8;
@@ -70,7 +95,6 @@
 
     .desc3 {
       margin-top: 24px;
-      /* 文字居中 */
       text-align: center;
     }
 
@@ -78,34 +102,29 @@
       font-size: 12px;
       font-weight: 400;
       color: #64748b;
-      /* 文字居中 */
       text-align: center;
       margin-bottom: 12px;
     }
 
-    .desc3 span {
-      font-size: 14px;
-      font-weight: 500;
-      color: #ccc;
-      margin-right: 12px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .desc3 .tag-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .desc3 span:last-child {
-      margin-right: 0;
+    .desc3 .tag {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      color: #fff;
     }
 
     .footer {
-      /* 底部居中 */
       margin-top: 40px;
-      /* 文字居中 */
       text-align: center;
-      background-color: rgba(0, 0, 0, 0);
     }
 
     .footer .contact-btn {
@@ -116,6 +135,9 @@
       border-radius: 25px;
       border: 2px solid #5DADE2;
       transition: all 0.3s;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .footer .contact-btn:hover {
@@ -130,46 +152,32 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- 头部 -->
-  <header class="header">
-    <img src="./img/晓黎头像.jpg" alt="头像" class="Avatar">
-  </header>
-  <!-- 主体 -->
-  <main class="main">
-    <h1 class="name">晓黎</h1>
-    <p class="desc">
-      <span>
-        前端开发
-      </span>
-      <span>
-        自由职业
-      </span>
-      <span>
-        数字游民
-      </span>
-    </p>
-
-    <p class="desc2">16岁进厂打工，自学编程，目标18岁实现远程办公，边赚钱边游山玩水。</p>
-  </main>
-
-  <!-- 技术标签标题 -->
-  <div class="desc3">
-    <h2 class="title">技术标签</h2>
-    <span>HTML/CSS</span>
-    <span>JavaScript</span>
-    <span>Vue3</span>
+  <div class="card">
+    <header class="header">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigApKWigAooooAKKKKACiiigAooooAKKKKACkZgqlmOAOppa8Q+OHxIfTIG8MaXJtuJ0/0mZTzGv90e5oA0/HHxy0rQfNs9F2ahfqdpbny0/HufpXn3h745a7/bFkus3aCxacG5dIssE9h2H09K8fPr3pKAPta18aeGI7FJv+EhtZUlO5GkmGfm6DHauH0j47adceKp9K1KFILU3DRW93GxIIBwCw7Z9a+Ycn1oBIOe9AH33HIki5Rgw9QafXyz4O+K1x4d1jTGnmebTpraOC8RiSVZSRvHvtx9a+oba4juraOeFg0cihlYdCCMigCWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMPxf4hh8L+F7/V5iP3EZKL/AHnPCj88V8UapqNxq+p3OoXbl57iQyOfcmvff2jNeMem6bokMwzM5mmQHnA4XPtkn8q+d6ACiiigAooooAK+vvgzqEl/8NNNMrFmhDRDPXAPFfINe6/ADxULfUJNAmIY3gLQ/N9zy15GPfJ/KgD6JooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACo55kgheWRgqIpZiewFSVx/xP1qLQ/h9qtxITukiMEYHdm4FAHyp468RyeKfGOoao7ZjeQrEOwReF/QZ/GucoooAKKKKACiiigArqfhvePY/EXQpoyQftSocejfKf51y1b/gc48d6Ef8Ap+i/9CFAH2/RSDpS0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXiv7RerxQ+F7DSQ37+4uBLt9FUEZ/M17UTgZNfJPxu8Qf238QZ4I3V7ewQQIVOQT1b9Tj8KAPN6KKKACiiigAooooAK674ZaY+q/EXRYIzgpOJifZPm/pXI1738FfDVpDrul6rFvM50+SWXJyAWfauPTgGgD6CHSloooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKw/Eni3RvCtk1zqt7HCMfKnV2Pso5oApfEHxMvhbwbqGoLLGlyI9kAYjlzwOO/rXxdPNJcTyTSsXkkYszHuTXZfEb4hXvjrVy53Q6dCSLeDPb+8feuJoAKKKKACiiigAooooAO9fSP7PAurrTNUvbnLKhitoCRgBVBOB+Yr5vVSzADrX2b8MNCbw94B0u0ljCTvEJZQB/E3PNAHYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUARzmQQuYQpk2naG6Z7Z9q+UfjPe3B8bNBeSxy3sVsiyPEMKhPzYX8D3r6Z8Va5F4b8NX2qykYt4iyg927D86+J9X1S51rVrnUrxy9xcOXc+9AFKiiigAooooAKKKKACiiigByNskVvQ5r7S8FeMNE8S6HbPp97GzxxqkkTkB0IHQiviupbe6uLSQSW88kTj+JGINAH3u0iKMswA9SarvqVjGcPeW6n3lAr4el8Ra1Ou2XVrx19DM3+NUWubhzl55GPuxoA+8or21nOIbiKQ+iODU9fCGna1qek3kd3Y3s8E8ZyrK54r6y+Ffjz/hN/DnmXAC6hbHy7gAcE9mH1oA72iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooqjrP2z+x7z+z9v2zyW8nccDfjjP40AeGfHbxTPqcM2jaa6tY2Do19IG6yNnag9cdTXgVd/8AEDWrHY2iWEZWWOcPfSdpJQoB5787vzrgKACiiigAooooAKKKKACiiigAooooAKKKKACvff2bFl3643/LH92B/vc14FX09+z1pDWfgq41F+DeXJ2j/ZUAfzzQB7BRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVW1C8h0/T7i8uXCQQRtI7HsAMmrBrxr46eO7fT9Ck8M2cu6+vABNsP8Aq488g+5oA+ddXvF1DWb28QYWed5APQFiao1u6D4ffVRJcSOsdpCyrIxPJJBICjueDXR3fwr1jTtMvru/haGRLUXNvApDMw3AEN6EA5pCPP6KKKYwooooAKKKKACiiigAooooAKKKKAHRo0sixopZmIAA7mvt3wXokXh3whpmmRjHlQKW92PLfqTXyx8JfDz+IPiDp8ewNBbN9omyOMLyPzOK+xVGBigBaKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKq6jqNrpWnz3t5KsUEKFndjgACgDn/AB94ytvBfhua/lKtcsCltEf43xx+A718x2+h3et6PrnjTW2cw8+WTkGWdzgY9hmu6i0HWvjV4sfWLppLTw7A+yDf3QHkL7nua3/Eem2994n8O/DfS2B0yyVZ7xepIXnk/T9TQBzPw68NzS63pvhu9hGIJBq9zjpgovlqT+PSvR/i5qH9h6THqX2Xz1aCe1yGwVaReOO44zW/4a8NppviDXNWZi0l3KsSZH3IkUAAfjmvP/2iNRtYvD2nWJMn2p5jIgU4UDGCT69aECR83nqaSiigAooooAKKKKACiiigAooooAKKK1/DGiT+IvElhpVuuWuJlUn0XPJ/LNAH0p8D/CEeg+D49UlUG81NRKSRyqfwj+tep1WsbWOys4LW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" alt="头像" class="Avatar">
+    </header>
+    <main class="main">
+      <h1 class="name">晓黎</h1>
+      <p class="desc">
+        <span>前端开发</span>
+        <span>自由职业</span>
+        <span>数字游民</span>
+      </p>
+      <p class="desc2">16岁进厂打工，自学编程，目标18岁实现远程办公，边赚钱边游山玩水。</p>
+    </main>
+    <div class="desc3">
+      <h2 class="title">技术标签</h2>
+      <div class="tag-group">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Vue3</span>
+      </div>
+    </div>
+    <footer class="footer">
+      <button class="contact-btn">联系我</button>
+      <p class="contact-btn2">xiaoli.dev@gmail.com</p>
+    </footer>
   </div>
-
-  <!-- 底部 -->
-  <footer class="footer">
-    <button class="contact-btn">联系我</button>
-    <p class="contact-btn2">xiaoli.dev@gmail.com</p>
-  </footer>
-
-
-
 </body>
-
 </html>
