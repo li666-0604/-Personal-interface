@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人名片页</title>
+  <style>
+    /* 初始化 导入样式初始化.css */
+    @import url(./样式初始化.css);
+
+    body {
+      width: 100%;
+      background-color: #0f172a;
+      padding: 20px;
+    }
+
+    .Avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #5DADE2;
+      box-shadow: 0 0 20px rgba(93, 173, 226, 0.3);
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .main .name {
+      /* 主体居中 */
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 16px;
+    }
+
+    .main .desc {
+      margin-top: 16px;
+      /* 文字居中 */
+      text-align: center;
+    }
+
+    .main .desc span {
+      font-size: 12px;
+      font-weight: 400;
+      color: #5DADE2;
+      background-color: rgba(93, 173, 226, 0.15);
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      box-shadow: 1px solid rgba(93, 173, 226, 0.3);
+      margin-right: 12px;
+    }
+
+    .main .desc2 {
+      /* 主体居中 */
+      text-align: center;
+      /* 文字居中 */
+      line-height: 24px;
+      /* 行高 */
+      line-height: 1.6;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-top: 24px;
+    }
+
+    .desc3 {
+      margin-top: 24px;
+      /* 文字居中 */
+      text-align: center;
+    }
+
+    .desc3 .title {
+      font-size: 12px;
+      font-weight: 400;
+      color: #64748b;
+      /* 文字居中 */
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .desc3 span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ccc;
+      margin-right: 12px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .desc3 span:last-child {
+      margin-right: 0;
+    }
+
+    .footer {
+      /* 底部居中 */
+      margin-top: 40px;
+      /* 文字居中 */
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .footer .contact-btn {
+      width: 200px;
+      font-size: 16px;
+      padding: 12px 0;
+      color: #5DADE2;
+      border-radius: 25px;
+      border: 2px solid #5DADE2;
+      transition: all 0.3s;
+    }
+
+    .footer .contact-btn:hover {
+      background-color: #5DADE2;
+      color: #fff;
+    }
+
+    .footer .contact-btn2 {
+      margin-top: 20px;
+      color: #475569;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header class="header">
+    <img src="./img/晓黎头像.jpg" alt="头像" class="Avatar">
+  </header>
+  <!-- 主体 -->
+  <main class="main">
+    <h1 class="name">晓黎</h1>
+    <p class="desc">
+      <span>
+        前端开发
+      </span>
+      <span>
+        自由职业
+      </span>
+      <span>
+        数字游民
+      </span>
+    </p>
+
+    <p class="desc2">16岁进厂打工，自学编程，目标18岁实现远程办公，边赚钱边游山玩水。</p>
+  </main>
+
+  <!-- 技术标签标题 -->
+  <div class="desc3">
+    <h2 class="title">技术标签</h2>
+    <span>HTML/CSS</span>
+    <span>JavaScript</span>
+    <span>Vue3</span>
+  </div>
+
+  <!-- 底部 -->
+  <footer class="footer">
+    <button class="contact-btn">联系我</button>
+    <p class="contact-btn2">xiaoli.dev@gmail.com</p>
+  </footer>
+
+
+
+</body>
+
+</html>
